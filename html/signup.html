@@ -4,8 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/style/signup.css" />
+    <!-- <link rel="stylesheet" href="style/signup.css" /> -->
+    <style>
+      body {
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .center-container {
+        text-align: center;
+      }
+    </style>
   </head>
+
   <body>
     <div>
       <h1 class="center-container">Sign Up</h1>
@@ -19,9 +33,19 @@
             placeholder="Enter username"
           /><br /><br />
           <label for="email">Email</label><br />
-          <input type="email" name="email" id="email" placeholder="Enter email"/><br /><br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter email"
+          /><br /><br />
           <label for="password">Password</label><br />
-          <input type="password" name="password" id="password" placeholder="Enter password"/><br /><br />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter password"
+          /><br /><br />
           <label for="confirm_password">Confirm Password</label><br />
           <input
             type="password"
@@ -29,7 +53,7 @@
             id="confirm_password"
             placeholder="Confirm password"
           /><br /><br />
-          <input type="submit" value="Submit"/>
+          <input type="submit" value="Submit" />
         </form>
       </div>
     </div>

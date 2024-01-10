@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/style/login.css">
-</head>
+    <!-- <link rel="stylesheet" href="/style/login.css" /> -->
+    <style>
+      body {
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-<body>
+      .center-container {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
     <div>
-        <h1 class="center-container">Login</h1>
-        <div>
-            <form action="">
-                <label for="email">Email:</label><br>
-                <input type="text" id="email" name="email" placeholder="Enter email"><br><br>
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" placeholder="Enter password"><br><br>
-                <a href="/html/dashboard.html">
-                    <button>Login</button>
-                </a>
-            </form>
-        </div>
+      <h1 class="center-container">Login</h1>
+      <div>
+        <form action="">
+          <label for="email">Email:</label><br />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Enter email"
+          /><br /><br />
+          <label for="password">Password:</label><br />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter password"
+          /><br /><br />
+          <a href="html/dashboard.html">
+            <button>Login</button>
+          </a>
+        </form>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
