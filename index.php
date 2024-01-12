@@ -11,7 +11,7 @@
 <body>
     <nav>
         <a href="html/about.html">About</a>
-        <a href="html/login.html">Login</a>
+        <a href="login.php">Login</a>
     </nav>
     <a href="signup.php">
         <button>Get Started</button>

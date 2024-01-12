@@ -15,4 +15,7 @@ if (!$conn) {
     </script>
     <?php
 }
+ else {
+    echo "Opened database successfully\n";
+ }
 ?>

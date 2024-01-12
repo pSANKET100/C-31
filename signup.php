@@ -74,7 +74,7 @@
                 ?>
                 <script>
                     alert("Data inserted successfully");
-                    window.location.href = "html/login.html"; // Corrected path
+                    window.location.href = "login.php"; // Corrected path
                 </script>
                 <?php
             } else {
