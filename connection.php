@@ -16,6 +16,6 @@ if (!$conn) {
     <?php
 }
  else {
-    echo "Opened database successfully\n";
+  //  echo "Opened database successfully\n";
  }
 ?>
