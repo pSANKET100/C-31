@@ -11,4 +11,12 @@ function arePasswordsEqual($password, $confirmPassword) {
     return ($password === $confirmPassword);
 }
 
+function passwordLength($password) {
+    if (strlen($password) >= 8) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 ?>

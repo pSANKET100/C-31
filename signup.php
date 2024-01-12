@@ -76,6 +76,13 @@
                 alert("Passwords do not match");
             </script>
             <?php
+        } elseif (!passwordLength($password)) {
+            // Display alert if password is less than 8 characters
+            ?>
+            <script>
+                alert("Password must be at least 8 characters long");
+            </script>
+            <?php
         } elseif (!empty($email) && !empty($password) && isValidEmail($email)) {
             // Use prepared statement to prevent SQL injection
             $insertQuery = "INSERT INTO users (email, password) VALUES ($1, $2)";
