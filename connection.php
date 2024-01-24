@@ -2,8 +2,8 @@
 $host = "host = localhost";
 $port = "port = 5432";
 $dbname = "dbname = postgres";
-$user = "user = postgres";
-$password = "password = postgres";
+$user = "user = pineapple";
+$password = "password = pineapple";
 
 // Establish a connection
 $conn = pg_connect("$host $port $dbname $user $password");
@@ -15,7 +15,4 @@ if (!$conn) {
     </script>
     <?php
 }
- else {
-  //  echo "Opened database successfully\n";
- }
 ?>

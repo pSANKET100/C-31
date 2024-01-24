@@ -18,5 +18,3 @@ function passwordLength($password) {
         return false;
     }
 }
-
-?>
