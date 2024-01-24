@@ -42,7 +42,7 @@
                 <input type="submit" name="submit" value="Create Account" />
                 <br /><br />
                 <!-- Link to login page for existing users -->
-                Already have an account? <a href="/html/login.html">Login</a>
+                Already have an account? <a href="login.php">Login</a>
             </form>
         </div>
     </div>
