@@ -32,7 +32,7 @@
         <label for="rememberMe">
         <input type="submit" name="login" value="Login">
         <br><br>
-        Don't have an account? <a href="signup.html">Register</a>
+        Don't have an account? <a href="signup.php">Register</a>
       </form>
     </div>
   </div>
