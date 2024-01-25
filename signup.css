@@ -4,9 +4,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: red;
+  background-color: burlywood;
 }
 
 .center-container {
-    text-align: center;
+  text-align: center;
 }
