@@ -22,8 +22,10 @@
                     <!-- <label for="email">Email:</label> -->
                     <input type="email" id="email" name="email" placeholder="Enter email" required /><br /><br />
                     <!-- <label for="password">Password:</label> -->
-                    <input type="password" id="password" name="password" placeholder="Enter password" required /><br /><br />
-                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password" required />
+                    <input type="password" id="password" name="password" placeholder="Enter password"
+                        required /><br /><br />
+                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password"
+                        required />
                     <br>
                     <input type="submit" name="login" value="Create Account" />
                 </form>
@@ -31,13 +33,12 @@
         </div>
     </div>
     <?php
-
     // Include database connection and validation functions
     include "connection.php";
     include "functions.php";
 
     // Check if the form is submitted
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['login'])) { // Corrected the button name to match the form
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -47,25 +48,13 @@
 
         if (pg_num_rows($checkResult) > 0) {
             // Display alert if the email is already in use
-    ?>
-            <script>
-                alert("Email already in use. Please choose a different email.");
-            </script>
-        <?php
+            echo "<script>alert('Email already in use. Please choose a different email.');</script>";
         } elseif (!arePasswordsEqual($password, $_POST['confirm-password'])) {
             // Display alert if passwords do not match
-        ?>
-            <script>
-                alert("Passwords do not match");
-            </script>
-        <?php
+            echo "<script>alert('Passwords do not match');</script>";
         } elseif (!passwordLength($password)) {
             // Display alert if password is less than 8 characters
-        ?>
-            <script>
-                alert("Password must be at least 8 characters long");
-            </script>
-            <?php
+            echo "<script>alert('Password must be at least 8 characters long');</script>";
         } elseif (!empty($email) && !empty($password) && isValidEmail($email)) {
             // Use prepared statement to prevent SQL injection
             $insertQuery = "INSERT INTO users (email, password) VALUES ($1, $2)";
@@ -73,30 +62,18 @@
 
             if ($insertResult) {
                 // Display success message and redirect to login page
-            ?>
-                <script>
-                    alert("Data inserted successfully");
-                    window.location.href = "login.php"; // Corrected path
-                </script>
-            <?php
+                echo "<script>alert('Data inserted successfully'); window.location.href = 'login.php';</script>";
             } else {
                 // Display error message if data insertion fails
-            ?>
-                <script>
-                    alert("Error inserting data");
-                </script>
-            <?php
+                echo "<script>alert('Error inserting data');</script>";
             }
         } else {
             // Display alert if form fields are not filled correctly
-            ?>
-            <script>
-                alert("Please fill all the fields and provide a valid email");
-            </script>
-    <?php
+            echo "<script>alert('Please fill all the fields and provide a valid email');</script>";
         }
     }
     ?>
+
 </body>
 
 </html>
