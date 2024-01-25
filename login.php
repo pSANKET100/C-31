@@ -4,36 +4,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="login.css">
   <title>Document</title>
-  <style>
-    body {
-      margin: 0px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
 
-    .center-container {
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
-  <div>
-    <h1 class="center-container">Login</h1>
-    <div>
-      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <label for="email">Email:</label><br />
-        <input type="text" id="email" name="email" placeholder="Enter email" /><br /><br />
-        <label for="password">Password:</label><br />
-        <input type="password" id="password" name="password" placeholder="Enter password" /><br /><br />
-        <label for="rememberMe">
-        <input type="submit" name="login" value="Login">
-        <br><br>
+  <div class="container">
+    <div class="card">
+      <h1>Login</h1>
+      <div class="form-container">
+        <!-- Form for user login -->
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+          <!-- <label for="email">Email:</label> -->
+          <input type="text" id="email" name="email" placeholder="Enter email" required /><br /><br />
+          <!-- <label for="password">Password:</label> -->
+          <input type="password" id="password" name="password" placeholder="Enter password" required /><br /><br />
+          <input type="submit" name="login" value="Login" />
+        </form>
+      </div>
+      <div class="signup-link">
         Don't have an account? <a href="signup.php">Register</a>
-      </form>
+      </div>
     </div>
   </div>
 
