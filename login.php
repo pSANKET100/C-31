@@ -45,7 +45,7 @@
       <script>
         alert("Login successful");
         // Redirect to the desired page
-        window.location.href = "html/dashboard.php";
+        window.location.href = "html/dashboard.html";
       </script>
     <?php
       exit();
