@@ -9,10 +9,10 @@ $password = "postgres";
 $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
 if (!$conn) {
-?>
-<script>
-alert("Error: Unable to open database");
-</script>
-<?php
+    ?>
+    <script>
+        alert("Error: Unable to open database");
+    </script>
+    <?php
 }
 ?>
