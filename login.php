@@ -28,7 +28,6 @@
       </div>
     </div>
   </div>
-
   <?php
   include "connection.php";
 
@@ -42,21 +41,21 @@
 
     if ($result && pg_num_rows($result) > 0) {
       // Successful login
-      ?>
+  ?>
       <script>
         alert("Login successful");
         // Redirect to the desired page
-        window.location.href = "html/dashboard.html";
+        window.location.href = "html/dashboard.php";
       </script>
-      <?php
+    <?php
       exit();
     } else {
       // Failed login
-      ?>
+    ?>
       <script>
         alert("Invalid email or password. Please try again.");
       </script>
-      <?php
+  <?php
     }
   }
   ?>
