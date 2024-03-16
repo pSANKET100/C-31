@@ -1,77 +1,77 @@
 body {
-    font-family: "Victor Mono", monospace;
-    background: #b2e99d;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  font-family: "Victor Mono", monospace;
+  background: #ffed00;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .container {
-    text-align: center;
+  text-align: center;
 }
 
 .card {
-    background: #fff;
-    border-radius: 20px;
-    filter: drop-shadow(8px 8px 0px #000);
-    padding: 20px;
-    border: 4px solid #000;
+  background: #fff;
+  border-radius: 20px;
+  filter: drop-shadow(8px 8px 0px #000);
+  padding: 20px;
+  border: 4px solid #000;
 }
 
 .card h1 {
-    margin: 0;
-    font-size: 42px;
+  margin: 0;
+  font-size: 42px;
 }
 
 .form-container {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
+  display: block;
+  margin-bottom: 8px;
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 input[type="submit"] {
-    margin-top: 15px;
-    background: #fff;
-    font-size: 18px;
-    padding: 10px 15px;
-    border-radius: 6px;
-    border: 3px solid #000;
-    box-shadow: 5px 5px 0px 0px #000;
-    cursor: pointer;
+  margin-top: 15px;
+  background: #fff;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 3px solid #000;
+  box-shadow: 5px 5px 0px 0px #000;
+  cursor: pointer;
 }
 
 input[type="submit"]:active {
-    transform: translateY(4px);
-    box-shadow: 1px 2px 0px 0px #000;
+  transform: translateY(4px);
+  box-shadow: 1px 2px 0px 0px #000;
 }
 
 .signup-link {
-    margin-top: 10px;
-    font-size: 14px;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 .signup-link a {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .signup-link a:hover {
-    color: green;
+  color: green;
 }

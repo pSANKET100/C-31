@@ -1,3 +1,43 @@
+<?php
+session_start(); // Start the session
+
+// Check if the user is already logged in, redirect to dashboard if logged in
+if (isset($_SESSION['user_id'])) {
+  header("Location: fileuploadtest/index.php");
+  exit;
+}
+
+// Enable error reporting for debugging purposes (remove in production)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Check if form submission occurred
+if (isset($_POST["login"])) {
+  // Include database connection
+  require_once "connection.php";
+
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  // Validate login credentials
+  $query = "SELECT * FROM users WHERE email = $1 AND password = $2";
+  $result = pg_query_params($conn, $query, array($email, $password));
+
+  if ($result && pg_num_rows($result) > 0) {
+    // Successful login
+    $user_row = pg_fetch_assoc($result);
+    $_SESSION['user_id'] = $user_row['userid']; // Store user ID in session
+    $_SESSION['user_name'] = $user_row['name']; // Store user name in session
+    header("Location: fileuploadtest/index.php");
+    exit();
+  } else {
+    // Failed login
+    echo "<script>alert('Email or password is incorrect.');</script>";
+  }
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,20 +45,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="login.css">
-  <title>Document</title>
-
+  <title>Login</title>
 </head>
 
 <body>
+  <?php if (isset($error_message)): ?>
+    <p>
+      <?php echo $error_message; ?>
+    </p>
+  <?php endif; ?>
   <div class="container">
     <div class="card">
       <h1>Login</h1>
       <div class="form-container">
-        <!-- Form for user login -->
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-          <!-- <label for="email">Email:</label> -->
-          <input type="text" id="email" name="email" placeholder="Enter email" required /><br /><br />
-          <!-- <label for="password">Password:</label> -->
+          <input type="email" id="email" name="email" placeholder="Enter email" required /><br /><br />
           <input type="password" id="password" name="password" placeholder="Enter password" required /><br /><br />
           <input type="submit" name="login" value="Login" />
         </form>
@@ -28,38 +69,6 @@
       </div>
     </div>
   </div>
-  <?php
-  include "connection.php";
-
-  if (isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Validate login credentials
-    $query = "SELECT * FROM users WHERE email = $1 AND password = $2";
-    $result = pg_query_params($conn, $query, array($email, $password));
-
-    if ($result && pg_num_rows($result) > 0) {
-      // Successful login
-  ?>
-      <script>
-        alert("Login successful");
-        // Redirect to the desired page
-        window.location.href = "html/dashboard.html";
-      </script>
-    <?php
-      exit();
-    } else {
-      // Failed login
-    ?>
-      <script>
-        alert("Invalid email or password. Please try again.");
-      </script>
-  <?php
-    }
-  }
-  ?>
-  hoiii
 </body>
 
 </html>
