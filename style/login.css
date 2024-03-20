@@ -1,6 +1,6 @@
 body {
   font-family: "Victor Mono", monospace;
-  background: #ffed00;
+  background: #fff;
   margin: 0;
   padding: 0;
   display: flex;
@@ -24,6 +24,8 @@ body {
 .card h1 {
   margin: 0;
   font-size: 42px;
+  font-family: "DM Mono", monospace;
+  font-weight: 900;
 }
 
 .form-container {
@@ -74,4 +76,43 @@ input[type="submit"]:active {
 
 .signup-link a:hover {
   color: green;
+}
+
+nav {
+  background-color: #ffed00;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 4px solid black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  font-size: x-large;
+  font-weight: bolder;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: black;
+  color: white;
+}
+
+input[type="submit"][name="login"] {
+  background-color: yellow;
 }

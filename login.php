@@ -2,7 +2,7 @@
 session_start(); // Start the session
 
 // Check if the user is already logged in, redirect to dashboard if logged in
-if (isset($_SESSION['user_id'])) {
+if (isset ($_SESSION['user_id'])) {
   header("Location: fileuploadtest/index.php");
   exit;
 }
@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Check if form submission occurred
-if (isset($_POST["login"])) {
+if (isset ($_POST["login"])) {
   // Include database connection
   require_once "connection.php";
 
@@ -44,12 +44,21 @@ if (isset($_POST["login"])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="style/login.css">
   <title>Login</title>
 </head>
 
 <body>
-  <?php if (isset($error_message)): ?>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="/html/about.html">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <div class="dropdown"></div>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <?php if (isset ($error_message)): ?>
     <p>
       <?php echo $error_message; ?>
     </p>

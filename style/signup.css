@@ -1,19 +1,6 @@
-/* body {
-  margin: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: burlywood;
-}
-
-.center-container {
-  text-align: center;
-} */
-
 body {
   font-family: "Victor Mono", monospace;
-  background-color: #ffed00;
+  background-color: white;
   margin: 0;
   padding: 0;
   display: flex;
@@ -38,6 +25,8 @@ body {
 .card h1 {
   margin: 0;
   font-size: 42px;
+  font-family: "DM Mono", monospace;
+  font-weight: 900;
 }
 
 .form-container {
@@ -73,4 +62,48 @@ input[type="submit"] {
 input[type="submit"]:active {
   transform: translateY(4px);
   box-shadow: 1px 2px 0px 0px #000;
+}
+
+
+nav {
+  background-color: #ffed00;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: 100%;
+  /* Full width */
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 4px solid black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  font-size: x-large;
+  font-weight: bolder;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: black;
+  color: white;
+}
+
+
+input[type="submit"][name="signup"] {
+  background-color: yellow;
 }

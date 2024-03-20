@@ -2,7 +2,7 @@
 session_start(); // Start the session
 
 // Check if the user is already logged in, redirect to dashboard if logged in
-if (isset($_SESSION['user_id'])) {
+if (isset ($_SESSION['user_id'])) {
     header("Location: fileuploadtest/index.php");
     exit;
 }
@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Check if form submission occurred
-if (isset($_POST['signup'])) { // Corrected the button name to match the form
+if (isset ($_POST['signup'])) { // Corrected the button name to match the form
     // Include database connection
     require_once "connection.php";
 
@@ -33,7 +33,7 @@ if (isset($_POST['signup'])) { // Corrected the button name to match the form
     } elseif (strlen($password) < 8) {
         // Display alert if password is less than 8 characters
         echo "<script>alert('Password must be at least 8 characters long');</script>";
-    } elseif (!empty($name) && !empty($email) && !empty($password)) {
+    } elseif (!empty ($name) && !empty ($email) && !empty ($password)) {
         // Use prepared statement to prevent SQL injection
         $insertQuery = "INSERT INTO users (name, email, password) VALUES ($1, $2, $3)";
         $insertResult = pg_query_params($conn, $insertQuery, array($name, $email, $password));
@@ -58,11 +58,20 @@ if (isset($_POST['signup'])) { // Corrected the button name to match the form
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="style/signup.css">
     <title>Sign Up</title>
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/html/about.html">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <div class="dropdown"></div>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
     <div class="container">
         <div class="card">
             <h1>Sign Up</h1>

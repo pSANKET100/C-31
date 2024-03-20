@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net" modified="2024-03-20T09:24:50.334Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="lK2bsTHNE98nNa2S0S38" version="24.0.7" type="device">
+  <diagram name="Page-1" id="mrlwmm101TYWDxv6EAuC">
+    <mxGraphModel dx="1796" dy="1013" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-34" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="150" y="30" width="620" height="775.6488549618321" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-26" value="" style="group" vertex="1" connectable="0" parent="I_Xr1opt1AS1mwzYHLAi-34">
+          <mxGeometry x="429.2307692307693" y="408.7175572519084" width="190.76923076923077" height="161.75572519083968" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-5" value="Text File" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-26">
+          <mxGeometry width="190.76923076923077" height="161.75572519083968" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-6" value="+ fileName&lt;div&gt;+ content&lt;/div&gt;&lt;div&gt;+ isEncrypted&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-26">
+          <mxGeometry y="32.351145038167935" width="190.76923076923077" height="67.19083969465649" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;container=0;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-26">
+          <mxGeometry y="99.54198473282443" width="190.76923076923077" height="9.954198473282442" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-8" value="+ getContent()&lt;div&gt;+ setContent()&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-26">
+          <mxGeometry y="109.49618320610686" width="190.76923076923077" height="52.25954198473282" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-31" value="" style="endArrow=none;html=1;rounded=0;entryX=0.997;entryY=0.943;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="I_Xr1opt1AS1mwzYHLAi-26" target="I_Xr1opt1AS1mwzYHLAi-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2.7692307692307168" y="94.28244274809163" as="sourcePoint" />
+            <mxPoint x="180.76923076923072" y="94.28244274809163" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="I_Xr1opt1AS1mwzYHLAi-34" source="I_Xr1opt1AS1mwzYHLAi-1" target="I_Xr1opt1AS1mwzYHLAi-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-1" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-34">
+          <mxGeometry y="130" width="190.76923076923077" height="167.84732824427482" as="geometry">
+            <mxRectangle x="345" y="240" width="70" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-2" value="+ username&lt;div&gt;+ password&lt;/div&gt;&lt;div&gt;+ email&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;spacingTop=1;spacingBottom=7;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-1">
+          <mxGeometry y="26" width="190.76923076923077" height="67.19083969465649" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-1">
+          <mxGeometry y="93.19083969465649" width="190.76923076923077" height="9.954198473282442" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-4" value="+ uploadFile()&lt;div&gt;+ downloadFile()&lt;/div&gt;&lt;div&gt;+ deleteFile()&amp;nbsp;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-1">
+          <mxGeometry y="103.14503816793894" width="190.76923076923077" height="64.70229007633587" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="I_Xr1opt1AS1mwzYHLAi-34" source="I_Xr1opt1AS1mwzYHLAi-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="524.6153846153846" y="577.9389312977099" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-13" value="Decryption Manager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-34">
+          <mxGeometry y="665.0381679389313" width="226.53846153846155" height="110.61068702290078" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-14" value="+ filePath&lt;div&gt;+ password&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-13">
+          <mxGeometry y="26" width="226.53846153846155" height="42.30534351145038" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-13">
+          <mxGeometry y="68.30534351145039" width="226.53846153846155" height="9.954198473282442" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-16" value="+ decryptFile (filePath, password)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-13">
+          <mxGeometry y="78.25954198473283" width="226.53846153846155" height="32.351145038167935" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-27" value="" style="group" vertex="1" connectable="0" parent="I_Xr1opt1AS1mwzYHLAi-34">
+          <mxGeometry y="421.1603053435114" width="226.53846153846155" height="136.87022900763358" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-9" value="Encryption Manager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-27">
+          <mxGeometry width="226.53846153846155" height="136.87022900763358" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-10" value="+ filePath&lt;div&gt;+ password&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-27">
+          <mxGeometry y="32.351145038167935" width="226.53846153846155" height="42.30534351145038" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;container=0;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-27">
+          <mxGeometry y="74.65648854961832" width="226.53846153846155" height="9.954198473282442" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-12" value="+ encryptFile (filePath, password)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-27">
+          <mxGeometry y="84.61068702290076" width="226.53846153846155" height="52.25954198473282" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.734;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="I_Xr1opt1AS1mwzYHLAi-34" source="I_Xr1opt1AS1mwzYHLAi-9" target="I_Xr1opt1AS1mwzYHLAi-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-30" value="" style="endArrow=none;html=1;rounded=0;exitX=0.008;exitY=-0.055;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="I_Xr1opt1AS1mwzYHLAi-34" source="I_Xr1opt1AS1mwzYHLAi-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="333.84615384615387" y="565.4961832061069" as="sourcePoint" />
+            <mxPoint x="226.53846153846155" y="503.2824427480916" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I_Xr1opt1AS1mwzYHLAi-33" value="Class diagram for text file encryption/decryption" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=20;labelBackgroundColor=none;labelBorderColor=default;" vertex="1" parent="I_Xr1opt1AS1mwzYHLAi-34">
+          <mxGeometry x="124.23000000000002" width="305" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
