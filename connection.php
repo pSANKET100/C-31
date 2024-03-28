@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $port = "5432";
-$dbname = "postgres";
+$dbname = "project";
 $user = "sanket";
 $password = "sanket";
 

@@ -10,7 +10,7 @@ if (!isset ($_SESSION['user_id'])) {
 }
 
 // Include database connection
-include_once "includes/connection.php";
+include_once "..//connection.php";
 
 // Check if the form for downloading a file is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset ($_POST["download_file"])) {
