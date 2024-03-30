@@ -24,13 +24,56 @@ if (isset($_POST['submit'])) {
     <title>Document</title>
 </head>
 
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    .container {
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px;
+        width: 200%;
+        max-width: 500px;
+        /* Adjust as needed */
+        text-align: center;
+    }
+
+    h2 {
+        color: black;
+        margin-bottom: 20px;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    button[type="button"] {
+        background-color:#ffed00;
+        border-radius: 10px;
+        padding: 30px;
+        width: 80%;
+    }
+    button{
+        font-family: Arial, sans-serif;
+        font-size: 30px;
+    }
+</style>
+</head>
 <body>
-    <h2>Upload Files</h2>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-        Select file to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload File" name="submit">
-    </form>
+    <div class="container">
+        <h2>Upload Files</h2>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+            <!-- Remove the input tag -->
+            <label for="fileToUpload"></label><br>
+            <!-- You can optionally add a button to trigger file selection -->
+            <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;">
+            <button type="button" onclick="document.getElementById('fileToUpload').click();">Select TxT File</button>
+        </form>
+    </div>
 </body>
 
 </html>

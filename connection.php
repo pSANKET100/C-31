@@ -2,8 +2,8 @@
 $host = "localhost";
 $port = "5432";
 $dbname = "project";
-$user = "pineapple";
-$password = "pineapple";
+$user = "sanket";
+$password = "sanket";
 
 // Establish a connection
 $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
