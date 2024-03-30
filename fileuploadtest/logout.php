@@ -7,7 +7,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
 
     // Redirect to the home page
-    header("Location: ../login.php");
+    header("Location: ../index.html");
     exit;
 }
 ?>

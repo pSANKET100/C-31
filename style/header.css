@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Victor+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,500&display=swap");
+
+body {
+    font-family: "Victor Mono", monospace;
+}
+
+.container {
+    margin: 100px auto;
+    max-width: 400px;
+}
+
+nav {
+    background-color: #ffed00;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 4px solid black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    font-size: 18px;
+    /* Adjust font size */
+    font-weight: bold;
+    /* Use bold instead of bolder for consistency */
+    text-align: center;
+    padding: 14px 20px;
+    /* Adjust padding */
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Add any necessary styles for dropdown menus */
+
+
+/* new  */
+/* Add any necessary styles for dropdown menus */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    /* Increase the z-index value */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}

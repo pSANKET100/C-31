@@ -4,8 +4,8 @@ ini_set('display_errors', 1);
 session_start();
 
 // Check if the user is not logged in, redirect to login page if not logged in
-if (!isset ($_SESSION['user_id'])) {
-    header("Location: ../login.php");
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../../login.php");
     exit;
 }
 
@@ -29,7 +29,7 @@ include_once '../../fileuploadtest/includes/function.php';
 
 <body>
     <h1>
-        <?php echo isset ($_SESSION['user_name']) ? $_SESSION['user_name'] : ''; ?>
+        <?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : ''; ?>
     </h1>
     <a href="../../fileuploadtest/index.php"><button>Home</button></a>
     <hr>

@@ -1,14 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Victor+Mono:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,500&display=swap");
+
 body {
   /* background: #b2e99d; */
   font-family: "Victor Mono", monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
 }
+
 .container {
   margin: 100px auto;
   max-width: 400px;
   margin-top: 200px;
 }
+
 .card {
   background: #fff;
   border-radius: 20px;
@@ -16,6 +22,7 @@ body {
   padding: 20px;
   border: 4px solid #000;
 }
+
 .card h1 {
   font-family: "DM Mono", monospace;
   font-weight: 900;
@@ -24,12 +31,15 @@ body {
   letter-spacing: 2px;
   position: relative;
 }
+
 .card p {
   font-size: 18px;
 }
+
 .button-container {
   text-align: right;
 }
+
 button {
   margin: 0 5px;
   background: #fff;
@@ -53,10 +63,14 @@ button:active {
 
 nav {
   background-color: #ffed00;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: 100%;
+  /* Full width */
   overflow: hidden;
+  z-index: 9999;
 }
 
 ul {
@@ -86,17 +100,38 @@ li a:hover {
   color: white;
 }
 
-.pdf {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+
+.containers {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-img {
-  height: 70%;
-  width: 40%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.title {
+  text-align: center;
+  color: #333;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.feature img {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.feature p {
+  color: #666;
+}
+
+u {
+  color: #ffed00;
+  font-weight: bolder;
 }

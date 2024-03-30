@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 session_start(); // Start the session
 
 // Check if the user is not logged in, redirect to login page if not logged in
-if (!isset ($_SESSION['user_id'])) {
+if (!isset($_SESSION['user_id'])) {
   header("Location: ../login.php");
   exit;
 }
@@ -13,7 +13,7 @@ if (!isset ($_SESSION['user_id'])) {
 include_once "includes/connection.php";
 
 // Check if the form for downloading a file is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset ($_POST["download_file"])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["download_file"])) {
   // Get the selected file ID from the form
   $selected_file_id = $_POST["file_id"];
 
@@ -32,9 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset ($_POST["download_file"])) {
   <title>My Files</title>
 </head>
 
-<body>
+<body><br><br><br>
   <h1>Welcome,
-    <?php echo isset ($_SESSION['user_name']) ? $_SESSION['user_name'] : ''; ?>
+    <?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : ''; ?>
   </h1>
   <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
     Select file to upload:
