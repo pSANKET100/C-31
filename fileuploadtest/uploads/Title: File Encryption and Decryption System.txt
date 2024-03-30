@@ -1,0 +1,36 @@
+Title: File Encryption and Decryption System
+
+Team size: 2 Members
+
+Team member Names: Sanket Patil, Ritesh Chavan
+
+Seat No/Roll No: 8755, 8756
+
+Class & Div: Ty BSC CS, B
+
+Batch: F
+
+Subject Code/Name:
+
+Start date of Project:
+
+Deadline date of project:
+
+College Project Mentor Name: Rupali Mote
+
+Project Details:EasyEncrypt is a user-friendly system designed to keep sensitive text data safe. The main goal of the project is to make it simple for users to secure their files through an easy process of encryption and, when needed, decryption.
+
+Hardware requirement:
+- Operating System: Operating system – Kali Linux 
+ minimum 20GB hard disk,AMD64 processor.
+- Processor: x86_64 architecture
+
+Software requirement:
+- HTML, CSS for the user interface
+- JavaScript for client-side functionality
+- PHP for server-side processing
+- PostgreSQL for database management
+
+The project aims to introduce users to basic file security concepts and hands-on
+experience with web development technologies. The user interface will be intuitive, making
+it suitable for users with minimal technical knowledge.
