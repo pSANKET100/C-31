@@ -64,16 +64,6 @@ if (isset($_POST['signup'])) { // Corrected the button name to match the form
 </head>
 
 <body>
-    <!-- <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="/html/about.html">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <div class="dropdown"></div>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav> -->
-
     <div class="container">
         <div class="card">
             <h1>Sign Up</h1>

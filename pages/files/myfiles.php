@@ -11,10 +11,8 @@ if (!isset($_SESSION['user_id'])) {
 
 // Include the database connection
 include_once "../../connection.php";
-
-// Include the file containing functions
 include_once '../../fileuploadtest/includes/function.php';
-
+include '../../navbar.php';
 ?>
 
 <!DOCTYPE html>
@@ -28,12 +26,9 @@ include_once '../../fileuploadtest/includes/function.php';
 </head>
 
 <body>
-    <h1>
-        <?php echo isset($_SESSION['user_name']) ? $_SESSION['user_name'] : ''; ?>
-    </h1>
-    <a href="../../fileuploadtest/index.php"><button>Home</button></a>
-    <hr>
-    <h2>Non-Encrypted Files</h2>
+    <br><br>
+    <!-- <a href="../../fileuploadtest/index.php"><button>Home</button></a> -->
+    <h2>Files</h2>
     <?php displayFiles($conn, "files"); ?>
     <hr>
     <h2>Encrypted Files</h2>
@@ -45,17 +40,7 @@ include_once '../../fileuploadtest/includes/function.php';
     <h2>Externally Encrypted Files</h2>
     <?php displayFiles($conn, "externally_encrypted_files"); ?><br><br>
     <hr>
-    <h2>Upload Files</h2>
-    <!-- <form action="../../fileuploadtest/upload.php" method="post">
-        Select file to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload" />
-        <input type="submit" value="Upload File" name="submit" />
-    </form> -->
-    <form action="../../fileuploadtest/upload.php" method="post" enctype="multipart/form-data">
-        Select file to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload File" name="submit">
-    </form>
+   
     <br>
 </body>
 

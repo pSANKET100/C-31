@@ -42,8 +42,8 @@ function encryptFile($conn, $file_id, $shift)
         file_put_contents($target_directory . $encrypted_file_name, $encrypted_content);
 
         // Store encrypted file details in the database
-        $insert_query = "INSERT INTO encrypted_files (userid, fileid, file_name, file_path, password) VALUES ($1, $2, $3, $4, $5)";
-        $insert_result = pg_query_params($conn, $insert_query, array($user_id, $file_id, $encrypted_file_name, $target_directory . $encrypted_file_name, $shift));
+        $insert_query = "INSERT INTO encrypted_files (userid, file_name, file_path, password) VALUES ($1, $2, $3, $4)";
+        $insert_result = pg_query_params($conn, $insert_query, array($user_id, $encrypted_file_name, $target_directory . $encrypted_file_name, $shift));
 
         if ($insert_result) {
             echo "File encrypted successfully.";
@@ -54,7 +54,6 @@ function encryptFile($conn, $file_id, $shift)
         echo "File not found or you don't have permission to access it.";
     }
 }
-
 
 function encryptString($plaintext, $shift)
 {
