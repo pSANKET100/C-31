@@ -1,15 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .btn-sm,
+        .new {
+            padding: 0.10rem 0.2rem;
+            font-size: 0.40rem;
+        }
+
+        .new,
+        .btn-sm {
+            margin: 0 5px;
+            background: #fff;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: 3px solid #000;
+            box-shadow: 5px 5px 0px 0px #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-// Include the database connection
 include 'connection.php';
-
 function uploadFile()
 {
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
-    // include 'connection.php';
-    // Set the target directory for uploaded files (modify as needed)
     $target_dir = "uploads/";
 
     $directory = 'uploads/';
@@ -21,11 +54,11 @@ function uploadFile()
     }
 
     // Check if form submission occurred (prevents unnecessary file checks)
-    if (isset ($_POST["submit"])) {
+    if (isset($_POST["submit"])) {
 
         // Get the file name and ensure it is not empty
         $fileName = $_FILES["fileToUpload"]["name"];
-        if (empty ($fileName)) {
+        if (empty($fileName)) {
             echo "<script>alert('Error: Please select a file to upload.');</script>";
             exit; // Terminate script execution
         }
@@ -75,22 +108,13 @@ function uploadFile()
             $query = "INSERT INTO $tableName (userid, file_name, file_path, upload_date) VALUES ($1, $2, $3, $4)";
             $params = array($userid, $fileName, $filePath, $uploadDate);
             pg_query_params($conn, $query, $params);
-
-            // if (!$tableName) {
-            //     $query = "INSERT INTO files (userid, file_name, file_path, upload_date) VALUES ($1, $2, $3, $4)";
-            //     $params = array($userid, $fileName, $filePath, $uploadDate);
-            //     pg_query_params($conn, $query, $params);
-            // }
-
-            // Redirect or additional logic as needed...
-
         } else {
             echo "<script>alert('Error: An error occurred while uploading the file.');</script>";
         }
     }
 }
 
-// Function to fetch and display files for a given table
+
 function displayFiles($conn, $table)
 {
     error_reporting(E_ALL);
@@ -99,49 +123,54 @@ function displayFiles($conn, $table)
     $user_id = $_SESSION['user_id'];
 
     // Query to fetch files from the specified table for the current user
-    $query = "SELECT fileid, file_name, file_path FROM $table WHERE userid = $1";
+    $query = "SELECT fileid, file_name, file_path, upload_date FROM $table WHERE userid = $1";
     $result = pg_query_params($conn, $query, array($user_id));
 
     if ($result && pg_num_rows($result) > 0) {
-        // Display files in a table
-        echo "<table border='1'>";
-        echo "<tr><th>File Name</th><th>Action</th></tr>";
+        // Display files in a table with Bootstrap styling inside a container
+        echo "<div class='container'>";
+        echo "<div class='row justify-content-center'>"; // Center the row
+        echo "<div class='col-md-10'>"; // Adjust column width as needed
+        echo "<div class='table-responsive'>";
+        echo "<table class='table table-sm table-striped table-bordered table-hover' style='width: 100%;'>"; // Adjust width here
+        echo "<thead class='thead-dark'><tr><th>File Name</th><th>Upload Date</th><th>Action</th></tr></thead>";
+        echo "<tbody>";
 
         while ($row = pg_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td style='text-align:center;'>{$row['file_name']}</td>";
-            echo "<td style='text-align:center;'>";
+            echo "<td>{$row['file_name']}</td>";
+            echo "<td>{$row['upload_date']}</td>";
+            echo "<td>";
 
             // Display different action buttons based on the table
             if ($table === 'files') {
                 // For files table, display Encrypt button
-                echo "<form method='post' action='encrypt.php' style='display:inline-block;'>
+                echo "<form method='post' action='encrypt.php' style='display:inline-block; margin-right: 5px;'>
                             <input type='hidden' name='file_id' value='{$row['fileid']}' />
-                             <button type='submit' name='encrypt_file'>Encrypt</button>
+                             <button type='submit' name='encrypt_file' class='btn btn-sm btn-primary'>Encrypt</button>
                         </form>";
             } elseif ($table === 'decrypted_files') {
                 // For decrypted_files table, display Decrypt and Download buttons
-                echo "<form method='post' action='delete.php' style='display:inline-block;'>
+                echo "<form method='post' action='delete.php' style='display:inline-block; margin-right: 5px;'>
                         <input type='hidden' name='file_id' value='{$row['fileid']}' />
                         <input type='hidden' name='table_name' value='{$table}' />
-                        <button type='submit' name='delete_file'>Delete</button>
+                        <button type='submit' name='delete_file' class='btn btn-sm btn-danger'>Delete</button>
                       </form>";
 
                 // Display download button
-                echo "<a href='download.php?file_id={$row['fileid']}&table=$table'><button>Download</button></a>";
+                echo "<a href='download.php?file_id={$row['fileid']}&table=$table' class='btn btn-sm btn-success'>Download</a>";
             } elseif ($table === 'encrypted_files') {
                 // For encrypted_files table, display Decrypt button
-                echo "<form method='get' action='decrypt.php' style='display:inline-block;'>
+                echo "<form method='get' action='decrypt.php' style='display:inline-block; margin-right: 5px;'>
                         <input type='hidden' name='file_id' value='{$row['fileid']}' />
                         <input type='hidden' name='table_name' value='{$table}' />
-                        <button type='submit' name='decrypt_file'>Decrypt</button>
+                        <button type='submit' name='decrypt_file' class='btn btn-sm btn-warning'>Decrypt</button>
                       </form>";
             } elseif ($table === 'externally_encrypted_files') {
-                // For externally_encrypted_files table, display Decrypt Externally button
-                echo "<form method='get' action='decrypt.php' style='display:inline-block;'>
+                echo "<form method='get' action='decrypt.php' style='display:inline-block; margin-right: 5px;'>
                         <input type='hidden' name='file_id' value='{$row['fileid']}' />
                         <input type='hidden' name='table_name' value='{$table}' />
-                        <button type='submit' name='decrypt_file'>Decrypt Externally</button>
+                        <button type='submit' name='decrypt_file' class='btn btn-sm btn-info'>Decrypt Externally</button>
                       </form>";
             }
 
@@ -151,17 +180,17 @@ function displayFiles($conn, $table)
 
             // Display download button if file has been decrypted, otherwise, disable it
             if ($file_exists) {
-                echo "<a href='download.php?file_id={$row['fileid']}&table=$table'><button>Download</button></a>";
+                echo "<a href='download.php?file_id={$row['fileid']}&table=$table' class='btn btn-sm btn-success'>Download</a>";
             } else {
-                echo "<button disabled>Download</button>";
+                echo "<button disabled class='btn btn-sm btn-success'>Download</button>";
             }
 
             // Display delete button for all tables except decrypted_files
             if ($table !== 'decrypted_files') {
-                echo "<form method='post' action='delete.php' style='display:inline-block;'>
+                echo "<form method='post' action='delete.php' style='display:inline-block; margin-right: 5px;'>
                         <input type='hidden' name='file_id' value='{$row['fileid']}' />
                         <input type='hidden' name='table_name' value='{$table}' />
-                        <button type='submit' name='delete_file'>Delete</button>
+                        <button type='submit' name='delete_file' class='btn btn-sm btn-danger'>Delete</button>
                       </form>";
             }
 
@@ -169,8 +198,13 @@ function displayFiles($conn, $table)
             echo "</tr>";
         }
 
+        echo "</tbody>";
         echo "</table>";
+        echo "</div>";
+        echo "</div>"; // Close the column
+        echo "</div>"; // Close the row
+        echo "</div>"; // Close the container div
     } else {
-        echo "No files found.";
+        echo "<p class='text-center'>No files found.</p>";
     }
 }

@@ -1,38 +1,29 @@
 <?php
-// include 'pages/header.html';
-session_start(); // Start the session
+session_start();
 
-// Check if the user is already logged in, redirect to dashboard if logged in
 if (isset($_SESSION['user_id'])) {
-  header("Location: fileuploadtest/index.php");
+  header("Location: pages/files/myfiles.php");
   exit;
 }
-
-// Enable error reporting for debugging purposes (remove in production)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Check if form submission occurred
 if (isset($_POST["login"])) {
-  // Include database connection
   require_once "connection.php";
 
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  // Validate login credentials
   $query = "SELECT * FROM users WHERE email = $1 AND password = $2";
   $result = pg_query_params($conn, $query, array($email, $password));
 
   if ($result && pg_num_rows($result) > 0) {
-    // Successful login
     $user_row = pg_fetch_assoc($result);
     $_SESSION['user_id'] = $user_row['userid']; // Store user ID in session
     $_SESSION['user_name'] = $user_row['name']; // Store user name in session
-    header("Location: fileuploadtest/index.php");
+    header("Location: pages/files/myfiles.php");
     exit();
   } else {
-    // Failed login
     echo "<script>alert('Email or password is incorrect.');</script>";
   }
 

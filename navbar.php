@@ -75,18 +75,23 @@ if (isset($_POST['logout'])) {
                             Decrypted Files
                         </button>
                 </li>
+                <!-- <li class="nav-item">
+                    <form action="myfiles.php" method="post">
+                        <button type="submit" class="btn btn-outline-primary disabled" name="decrypted">
+                            Externally Encrypted Files
+                        </button>
+                </li> -->
             </ul>
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="../../fileuploadtest/upload.php"><img
-                            src="../../assets/icons8-upload-24.png" width="20" height="20"
-                            class="d-inline-block align-top" alt="Upload"> Upload</a>
+                    <a class="nav-link" href="../../fileuploadtest/upload.php"><img src="../../assets/upload.png"
+                            width="20" height="20" class="d-inline-block align-top" alt="Upload"> Upload</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../../assets/icons8-user-24.png" alt="User" width="20" height="20">
+                        <img src="../../assets/user.png" alt="User" width="20" height="20">
                         <?php echo $_SESSION['user_name']; ?>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

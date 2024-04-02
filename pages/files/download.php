@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-// Check if the user is not logged in, redirect to login page if not logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
 
-// Include the database connection
 include_once "../../connection.php";
 
 // Function to download the file
