@@ -10,7 +10,7 @@ include_once "../../connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_file"])) {
     $selected_file_id = $_POST["file_id"];
-    $table_name = $_POST["table_name"]; 
+    $table_name = $_POST["table_name"];
 
     $user_id = $_SESSION['user_id'];
 

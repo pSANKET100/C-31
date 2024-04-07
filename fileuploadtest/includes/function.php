@@ -208,3 +208,4 @@ function displayFiles($conn, $table)
         echo "<p class='text-center'>No files found.</p>";
     }
 }
+

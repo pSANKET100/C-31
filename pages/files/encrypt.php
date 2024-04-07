@@ -48,7 +48,39 @@ function encryptFile($conn, $file_id, $shift)
     } else {
         echo "File not found or you don't have permission to access it.";
     }
+} {
+    $user_id = $_SESSION['user_id'];
+
+    $query = "SELECT file_name, file_path FROM files WHERE fileid = $1 AND userid = $2";
+    $result = pg_query_params($conn, $query, array($file_id, $user_id));
+    if ($result && pg_num_rows($result) > 0) {
+        $row = pg_fetch_assoc($result);
+        $file_name = $row['file_name'];
+        $file_path = '../../fileuploadtest/' . $row['file_path'];
+
+        $target_directory = "../../fileuploadtest/uploads/";
+
+        $encrypted_file_name = pathinfo($file_name, PATHINFO_FILENAME) . '_enc.' . pathinfo($file_name, PATHINFO_EXTENSION);
+
+        $file_content = file_get_contents($file_path);
+
+        $encrypted_content = encryptString($file_content, $shift);
+
+        file_put_contents($target_directory . $encrypted_file_name, $encrypted_content);
+
+        $insert_query = "INSERT INTO encrypted_files (userid, file_name, file_path, password) VALUES ($1, $2, $3, $4)";
+        $insert_result = pg_query_params($conn, $insert_query, array($user_id, $encrypted_file_name, $target_directory . $encrypted_file_name, $shift));
+
+        if ($insert_result) {
+            echo "File encrypted successfully.";
+        } else {
+            echo "Error storing encrypted file details in the database.";
+        }
+    } else {
+        echo "File not found or you don't have permission to access it.";
+    }
 }
+
 
 function encryptString($plaintext, $shift)
 {
