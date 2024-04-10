@@ -1,17 +1,15 @@
 <?php
-$host = "localhost";
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+$host = "aws-0-ap-south-1.pooler.supabase.com";
 $port = "5432";
-$dbname = "project";
-$user = "pineapple";
-$password = "pineapple";
+$dbname = "postgres";
+$user = "postgres.ckdqlddwsijbhxzcknxn";
+$password = "60FGSqefuewNQk7F";
 
 $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
 if (!$conn) {
-    ?>
-    <script>
-        alert("Error: Unable to open database");
-    </script>
-    <?php
+    $error_message = pg_last_error(); // Deprecated function, but still useful for now
+    echo "Error: Unable to connect to the database. Details: $error_message";
 }
-?>
