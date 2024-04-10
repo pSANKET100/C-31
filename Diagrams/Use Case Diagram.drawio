@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" modified="2024-03-20T09:01:23.898Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 Edg/121.0.0.0" etag="1Simh1L0rbS6HPGrc0H7" version="24.0.7" type="device">
+  <diagram name="Page-1" id="5WD9Kz45U5knhNOHiawi">
+    <mxGraphModel dx="988" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-1" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="185" y="482.5" width="60" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-4" value="" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" parent="1" vertex="1">
+          <mxGeometry x="269.75" y="430.75" width="618.5" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-52" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="ktm4lO3OafHI-kQ5AOYL-9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="265" y="540" as="sourcePoint" />
+            <mxPoint x="425" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-5" value="Upload Text File" style="ellipse;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
+          <mxGeometry x="507.5" y="286" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-6" value="Encrypt Text File with Password" style="ellipse;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
+          <mxGeometry x="507.5" y="395" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-9" value="Decrypt Text File with Password" style="ellipse;whiteSpace=wrap;html=1;shadow=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
+          <mxGeometry x="507.5" y="500" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-53" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="ktm4lO3OafHI-kQ5AOYL-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="265" y="540" as="sourcePoint" />
+            <mxPoint x="365" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-13" value="Delete file" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
+          <mxGeometry x="505" y="725" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-12" value="Download Encrypted and Decrypted Text File" style="ellipse;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
+          <mxGeometry x="507.5" y="615" width="143" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-54" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="ktm4lO3OafHI-kQ5AOYL-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="265" y="540" as="sourcePoint" />
+            <mxPoint x="355" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-55" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="ktm4lO3OafHI-kQ5AOYL-13" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="265" y="540" as="sourcePoint" />
+            <mxPoint x="365" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ktm4lO3OafHI-kQ5AOYL-56" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="ktm4lO3OafHI-kQ5AOYL-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="265" y="540" as="sourcePoint" />
+            <mxPoint x="415" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Zesa5ylfGhX-3jodN1Xe-1" value="Text File encryption/decryption system" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="547.5" y="230" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
