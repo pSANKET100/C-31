@@ -1,11 +1,11 @@
 <?php
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
-$host = "aws-0-ap-south-1.pooler.supabase.com";
+$host = "localhost";
 $port = "5432";
-$dbname = "postgres";
-$user = "postgres.ckdqlddwsijbhxzcknxn";
-$password = "60FGSqefuewNQk7F";
+$dbname = "project";
+$user = "pineapple";
+$password = "pineapple";
 
 $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
