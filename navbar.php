@@ -75,12 +75,12 @@ if (isset($_POST['logout'])) {
                             Decrypted Files
                         </button>
                 </li>
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                     <form action="myfiles.php" method="post">
-                        <button type="submit" class="btn btn-outline-primary disabled" name="decrypted">
+                        <button type="submit" class="btn btn-outline-primary" name="externally_encrypted_files">
                             Externally Encrypted Files
                         </button>
-                </li> -->
+                </li>
             </ul>
 
             <ul class="navbar-nav">

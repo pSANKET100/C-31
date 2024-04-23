@@ -52,12 +52,17 @@ include '../../navbar.php';
         echo "<h2>Decrypted Files</h2>";
         displayFiles($conn, "decrypted_files");
 
+    } elseif (isset($_POST['externally_encrypted_files'])) {
+        echo "<h2>Externally Encrypted Files</h2>";
+        displayFiles($conn, "externally_encrypted_files");
+
     } else {
         // Default option: Display all files
         echo "<h2>All Files</h2>";
         displayFiles($conn, "files");
     }
     ?>
+
 
 </body>
 

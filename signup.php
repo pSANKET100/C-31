@@ -62,11 +62,15 @@ if (isset($_POST['signup'])) {
             <h1>Sign Up</h1>
             <div class="form-container">
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                    <input type="text" id="name" name="name" placeholder="Enter name" required /><br /><br />
-                    <input type="email" id="email" name="email" placeholder="Enter email" required /><br /><br />
+                    <input type="text" id="name" name="name" placeholder="Enter name"
+                        value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>" required /><br /><br />
+                    <input type="email" id="email" name="email" placeholder="Enter email"
+                        value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>" required /><br /><br />
                     <input type="password" id="password" name="password" placeholder="Enter password"
+                        value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>"
                         required /><br /><br />
                     <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password"
+                        value="<?php echo isset($_POST['confirm-password']) ? $_POST['confirm-password'] : ''; ?>"
                         required /><br /><br />
                     <input type="submit" name="signup" value="Create Account" />
                 </form>

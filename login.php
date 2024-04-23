@@ -29,7 +29,6 @@ if (isset($_POST["login"])) {
 
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,8 +50,10 @@ if (isset($_POST["login"])) {
       <h1>Login</h1>
       <div class="form-container">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-          <input type="email" id="email" name="email" placeholder="Enter email" required /><br /><br />
-          <input type="password" id="password" name="password" placeholder="Enter password" required /><br /><br />
+          <input type="email" id="email" name="email" placeholder="Enter email"
+            value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>" required /><br /><br />
+          <input type="password" id="password" name="password" placeholder="Enter password"
+            value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>" required /><br /><br />
           <input type="submit" name="login" value="Login" />
         </form>
       </div>

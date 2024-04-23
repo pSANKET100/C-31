@@ -18,40 +18,86 @@ if (isset($_POST['logout'])) {
 
 include_once "../../connection.php";
 
-function decryptFile($conn, $file_id, $shift, $tableName)
+// function decryptFile($conn, $file_id, $shift, $tableName)
+// {
+//     $user_id = $_SESSION['user_id'];
+
+//     $query = "SELECT file_name, file_path FROM $tableName WHERE fileid = $1 AND userid = $2";
+//     $result = pg_query_params($conn, $query, array($file_id, $user_id));
+//     if ($result && pg_num_rows($result) > 0) {
+//         $row = pg_fetch_assoc($result);
+//         $encrypted_file_name = $row['file_name'];
+//         $encrypted_file_path = $row['file_path'];
+
+//         $target_directory = "../../fileuploadtest/uploads/";
+
+//         $decrypted_file_name = pathinfo($encrypted_file_name, PATHINFO_FILENAME) . '_dec.' . pathinfo($encrypted_file_name, PATHINFO_EXTENSION);
+
+//         $encrypted_content = file_get_contents($encrypted_file_path);
+//         $decrypted_content = decryptString($encrypted_content, $shift);
+
+//         $decrypted_file_path = $target_directory . $decrypted_file_name;
+//         file_put_contents($decrypted_file_path, $decrypted_content);
+
+//         $insert_query = "INSERT INTO decrypted_files (userid, fileid, file_name, file_path, password, upload_date) VALUES ($1, $2, $3, $4, $5, NOW())";
+//         $insert_result = pg_query_params($conn, $insert_query, array($user_id, $file_id, $decrypted_file_name, $decrypted_file_path, $shift));
+
+//         if ($insert_result) {
+//             header("Location: download.php?file_id=$file_id&table=decrypted_files");
+//             exit;
+//         } else {
+//             echo "Error storing decrypted file details in the database.";
+//         }
+//     } else {
+//         echo "File not found or you don't have permission to access it.";
+//     }
+// }
+
+function decryptFile($conn, $file_id, $shift)
 {
     $user_id = $_SESSION['user_id'];
 
-    $query = "SELECT file_name, file_path FROM $tableName WHERE fileid = $1 AND userid = $2";
+    // Check if the file exists in the original table
+    $query = "SELECT file_name, file_path FROM files WHERE fileid = $1 AND userid = $2";
     $result = pg_query_params($conn, $query, array($file_id, $user_id));
-    if ($result && pg_num_rows($result) > 0) {
-        $row = pg_fetch_assoc($result);
-        $encrypted_file_name = $row['file_name'];
-        $encrypted_file_path = $row['file_path'];
 
-        $target_directory = "../../fileuploadtest/uploads/";
+    if (!$result || pg_num_rows($result) === 0) {
+        // If file not found in the original table, check the externally encrypted files table
+        $query = "SELECT file_name, file_path FROM externally_encrypted_files WHERE fileid = $1 AND userid = $2";
+        $result = pg_query_params($conn, $query, array($file_id, $user_id));
 
-        $decrypted_file_name = pathinfo($encrypted_file_name, PATHINFO_FILENAME) . '_dec.' . pathinfo($encrypted_file_name, PATHINFO_EXTENSION);
-
-        $encrypted_content = file_get_contents($encrypted_file_path);
-        $decrypted_content = decryptString($encrypted_content, $shift);
-
-        $decrypted_file_path = $target_directory . $decrypted_file_name;
-        file_put_contents($decrypted_file_path, $decrypted_content);
-
-        $insert_query = "INSERT INTO decrypted_files (userid, fileid, file_name, file_path, password, upload_date) VALUES ($1, $2, $3, $4, $5, NOW())";
-        $insert_result = pg_query_params($conn, $insert_query, array($user_id, $file_id, $decrypted_file_name, $decrypted_file_path, $shift));
-
-        if ($insert_result) {
-            header("Location: download.php?file_id=$file_id&table=decrypted_files");
-            exit;
-        } else {
-            echo "Error storing decrypted file details in the database.";
+        if (!$result || pg_num_rows($result) === 0) {
+            echo "File not found or you don't have permission to access it.";
+            return false;
         }
+    }
+
+    $row = pg_fetch_assoc($result);
+    $file_name = $row['file_name'];
+    $file_path = '../../fileuploadtest/' . $row['file_path'];
+
+    // Read file content and perform decryption
+    $file_content = file_get_contents($file_path);
+    $decrypted_content = decryptString($file_content, $shift);
+
+    // Define target directory and decrypted file name
+    $target_directory = "../../fileuploadtest/uploads/";
+    $decrypted_file_name = pathinfo($file_name, PATHINFO_FILENAME) . '_dec.' . pathinfo($file_name, PATHINFO_EXTENSION);
+
+    // Write decrypted content to file
+    file_put_contents($target_directory . $decrypted_file_name, $decrypted_content);
+
+    // Insert decrypted file details in database
+    $insert_query = "INSERT INTO decrypted_files (userid, file_name, file_path, password, upload_date) VALUES ($1, $2, $3, $4, NOW())";
+    $insert_result = pg_query_params($conn, $insert_query, array($user_id, $decrypted_file_name, $target_directory . $decrypted_file_name, $shift));
+
+    if ($insert_result) {
+        echo "File decrypted successfully.";
     } else {
-        echo "File not found or you don't have permission to access it.";
+        echo "Error storing decrypted file details in the database.";
     }
 }
+
 
 function decryptString($ciphertext, $shift)
 {
@@ -73,8 +119,8 @@ function decryptString($ciphertext, $shift)
 if (isset($_POST['decrypt_file']) && isset($_POST['shift'])) {
     $file_id = $_POST['file_id'];
     $shift = $_POST['shift'];
-    $tableName = isset($_POST['table_name']) ? $_POST['table_name'] : 'encrypted_files'; // Default to encrypted_files
-    decryptFile($conn, $file_id, $shift, $tableName);
+    $tableName = 'encrypted_files';
+    decryptFile($conn, $file_id, $shift);
 }
 ?>
 
